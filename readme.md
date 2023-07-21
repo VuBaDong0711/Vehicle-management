@@ -1,10 +1,42 @@
+# Hướng dẫn sử dụng
+
+## clone từ github
+
+[HoangLongHotarou](https://github.com/HoangLongHotarou/Vehicle-management)
+
+- download model (ONNXModel và onnx_folder)
+
+tải lại dữ liệu bằng
+
+```sh
+mongorestore Vehicle-management\db\dump
+```
+
+- tạo thư mục env và các file .env
+
+sửa file auth.env thành
+
+- MAIL_USERNAME="tên người dùng"
+- MAIL_PASSWORD="mật khẩu"
+- MAIL_FROM="email"
+
+```sh
+chạy docker compose up từ thư mục gốc của dự án
+```
+
 # Smart Vehicle management.
+
 ### Description:
+
 A Vehicle Management System that analyze and record the vehicles using ANPR (Automatic number plate recognition) and security using Face-recognition
+
 ### Microservice:
+
 ![img](demo/Microservice.png)
 Backend folder:
+
 - User management and authentication:
+
 ```
 ├───auth
 │   ├───api
@@ -21,12 +53,15 @@ Backend folder:
 ```
 
 - Real-time license plate detection/recognition and face-recognition:
+
 ```
 ├───check-vehicle-real-time
 │   ├───services
 │   └───utils
 ```
-- Face recognition using FaceNet, MTCNN and HNSWlib 
+
+- Face recognition using FaceNet, MTCNN and HNSWlib
+
 ```
 ├───face-recognition
 │   ├───api
@@ -44,7 +79,9 @@ Backend folder:
 │   └───views
 │       └───templates
 ```
+
 - Vehicle manager
+
 ```
 ├───license-plate-app
 │   ├───api
@@ -59,7 +96,9 @@ Backend folder:
 │   ├───db
 │   └───utils
 ```
+
 - License plate detection and recognition using YOLO:
+
 ```
 └───yolo-license-plate
     ├───base
@@ -83,17 +122,20 @@ Backend folder:
 ```
 
 ### Requirement:
+
 Python version >= 3.9
 Node module >= v18.16.0
 
 ### Demo:
+
 1. Swagger: [Demo Video Link](https://www.youtube.com/watch?v=Rwx2PFWrNaw)
-![img](demo/swagger.png)
+   ![img](demo/swagger.png)
 
 2. Realtime License Plate Recognition: [Demo Video Link](https://www.youtube.com/watch?v=C4vqtv3u_jI)
-![img](demo/realtime.png)
+   ![img](demo/realtime.png)
 
 ### Technologies:
- - Microservice: NGINX, FastAPI, Mongodb, YOLO, Docker, MTCNN, FaceNet, HNSWlib.
- - Front-end: React.js (Using TypeScript)
- - Realtime Stream: WebSocket, Multi-thread.
+
+- Microservice: NGINX, FastAPI, Mongodb, YOLO, Docker, MTCNN, FaceNet, HNSWlib.
+- Front-end: React.js (Using TypeScript)
+- Realtime Stream: WebSocket, Multi-thread.
